@@ -27,10 +27,15 @@ public class MainActivity extends AppCompatActivity {
         //                        individual item in the ListView we are creating
         // * my_item_textview - This is the ID to the actual TextView that will contain the text for
         //                      an individual item in the ListView we are creating.
+
         // Here you should enter your code that fills the ListView
         // 1. Create an array
+        String[] rawData = {"one","two","three"};
         // 2. Create a List object with your array from step 1 as in-data
+        List<String> listData = new ArrayList<String>(Arrays.asList(rawData));
         // 3. Create an ArrayAdapter object that connects
+        ArrayAdapter adapter= new ArrayAdapter(getApplicationContext(),R.layout.list_item_textview,
+                    R.id.my_item_textview,listData);
         //    * list_item_textview
         //    * my_item_textview
         //    * List object created in step 2
