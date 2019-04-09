@@ -4,4 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.brohede.marcus.listviewapp.MainActivity"/>
+    tools:context="org.brohede.marcus.listviewapp.MainActivity">
+
+    <include layout="@layout/content_main" />
+
+    <!-- You need to enter your components here -->
+
+</android.support.constraint.ConstraintLayout>

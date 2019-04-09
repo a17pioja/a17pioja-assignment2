@@ -2,14 +2,19 @@ package org.brohede.marcus.listviewapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
     private String[] mountainNames = {"Matterhorn","Mont Blanc","Denali"};
     private String[] mountainLocations = {"Alps","Alps","Alaska"};
     private int[] mountainHeights ={4478,4808,6190};
+
     // Create ArrayLists from the raw data above and use these lists when populating your ListView.
 
 
@@ -30,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Here you should enter your code that fills the ListView
         // 1. Create an array
-        String[] rawData = {"one","two","three"};
+
         // 2. Create a List object with your array from step 1 as in-data
-        List<String> listData = new ArrayList<String>(Arrays.asList(rawData));
+        List<String> listData = new ArrayList<String>(Arrays.asList(mountainNames));
         // 3. Create an ArrayAdapter object that connects
         ArrayAdapter adapter= new ArrayAdapter(getApplicationContext(),R.layout.list_item_textview,
                     R.id.my_item_textview,listData);
@@ -40,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         //    * my_item_textview
         //    * List object created in step 2
         // 4. Find the ListView layout element "my_listview" and create an object instance
+        ListView myListView = (ListView)findViewById(R.id.my_listview);
+        myListView.setAdapter(adapter);
         // 5. Connect the ArrayAdapter from step 3 with ListView object created in step 4
         // 6. Style the ListView items according to Material Design
         //    See: https://material.io/guidelines/components/lists.html#lists-specs
