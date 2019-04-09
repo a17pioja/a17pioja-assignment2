@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         // 4. Find the ListView layout element "my_listview" and create an object instance
         ListView myListView = (ListView)findViewById(R.id.my_listview);
         myListView.setAdapter(adapter);
+        adapter.add("Swagmountain");
         // 5. Connect the ArrayAdapter from step 3 with ListView object created in step 4
         // 6. Style the ListView items according to Material Design
         //    See: https://material.io/guidelines/components/lists.html#lists-specs
