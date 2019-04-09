@@ -6,8 +6,14 @@
     android:layout_height="match_parent"
     tools:context="org.brohede.marcus.listviewapp.MainActivity">
 
-    <include layout="@layout/content_main" />
+
 
     <!-- You need to enter your components here -->
+    <include layout="@layout/list_item_textview" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/my_listview">
+    </ListView>
 
 </android.support.constraint.ConstraintLayout>

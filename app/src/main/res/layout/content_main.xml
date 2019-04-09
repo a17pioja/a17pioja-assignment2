@@ -9,11 +9,12 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     tools:context="org.brohede.marcus.listviewapp.MainActivity"
-    tools:showIn="@layout/activity_main">>
+    tools:showIn="@layout/activity_main">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/my_listview">
     </ListView>
+    <include layout="@layout/list_item_textview" />
 </RelativeLayoutLayout>
