@@ -9,13 +9,24 @@
 
 
     <!-- You need to enter your components here -->
-    <include layout="@layout/list_item_textview" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/list_item_textview" />
+
     <ListView
+        android:id="@+id/my_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/my_listview"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:divider="#00000000"
-        >
-    </ListView>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/include"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"></ListView>
+
 
 </android.support.constraint.ConstraintLayout>

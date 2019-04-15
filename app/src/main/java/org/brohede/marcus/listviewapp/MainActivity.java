@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         //    * List object created in step 2
         // 4. Find the ListView layout element "my_listview" and create an object instance
         ListView myListView = (ListView)findViewById(R.id.my_listview);
+
         myListView.setAdapter(adapter);
         //adapter.add("Swagmountain");
 
