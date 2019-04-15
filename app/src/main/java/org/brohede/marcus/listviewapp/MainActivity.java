@@ -2,8 +2,11 @@ package org.brohede.marcus.listviewapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
     private String[] mountainNames = {"Matterhorn","Mont Blanc","Denali"};
     private String[] mountainLocations = {"Alps","Alps","Alaska"};
     private int[] mountainHeights ={4478,4808,6190};
-
+    private ArrayAdapter adapter;
     // Create ArrayLists from the raw data above and use these lists when populating your ListView.
-
+    private ArrayList<String> listData = new ArrayList<>(Arrays.asList(mountainNames));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +40,8 @@ public class MainActivity extends AppCompatActivity {
         // 1. Create an array
 
         // 2. Create a List object with your array from step 1 as in-data
-        List<String> listData = new ArrayList<String>(Arrays.asList(mountainNames));
         // 3. Create an ArrayAdapter object that connects
-        ArrayAdapter adapter= new ArrayAdapter(getApplicationContext(),R.layout.list_item_textview,
+        adapter= new ArrayAdapter(getApplicationContext(),R.layout.list_item_textview,
                     R.id.my_item_textview,listData);
         //    * list_item_textview
         //    * my_item_textview
@@ -47,11 +49,23 @@ public class MainActivity extends AppCompatActivity {
         // 4. Find the ListView layout element "my_listview" and create an object instance
         ListView myListView = (ListView)findViewById(R.id.my_listview);
         myListView.setAdapter(adapter);
-        adapter.add("Swagmountain");
+        //adapter.add("Swagmountain");
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //adapter.add("Swagmountain§12§12");
+                int mytext =1337;
+                mytext = mountainHeights[position];
+                Toast.makeText(getApplicationContext(), String.valueOf(mytext),Toast.LENGTH_LONG).show();
+
+            }
+        });
+
         // 5. Connect the ArrayAdapter from step 3 with ListView object created in step 4
         // 6. Style the ListView items according to Material Design
         //    See: https://material.io/guidelines/components/lists.html#lists-specs
-        //    Look for "singel line specs" for "text only" lists and modify the list_item_textview
+        //    Look for "single line specs" for "text only" lists and modify the list_item_textview
         //    accordingly
     }
 }
