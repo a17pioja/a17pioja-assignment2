@@ -50,7 +50,11 @@ public class MainActivity extends AppCompatActivity {
         ListView myListView = (ListView)findViewById(R.id.my_listview);
 
         myListView.setAdapter(adapter);
-        //adapter.add("Swagmountain");
+        adapter.add("Mount Everest");
+        adapter.add("K2");
+        adapter.add("Annapurna");
+        adapter.add("Kilimanjaro");
+
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
